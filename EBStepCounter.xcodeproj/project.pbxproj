@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8443D66F18DF267F000575E3 /* EBAccelerometerFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8443D66D18DF267F000575E3 /* EBAccelerometerFilter.m */; };
+		8443D67218DF2738000575E3 /* EBStepManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8443D67118DF2738000575E3 /* EBStepManager.m */; };
+		8443D67918DF2C61000575E3 /* EBMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8443D67818DF2C61000575E3 /* EBMotionManager.m */; };
+		8443D67C18DF2C6E000575E3 /* EBM7Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8443D67B18DF2C6E000575E3 /* EBM7Manager.m */; };
+		8443D67F18DF2F47000575E3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8443D67E18DF2F47000575E3 /* CoreMotion.framework */; };
+		84CBBB8C18DF190000992502 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBB8B18DF190000992502 /* Foundation.framework */; };
+		84CBBB8E18DF190000992502 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBB8D18DF190000992502 /* CoreGraphics.framework */; };
+		84CBBB9018DF190000992502 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBB8F18DF190000992502 /* UIKit.framework */; };
+		84CBBB9618DF190000992502 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84CBBB9418DF190000992502 /* InfoPlist.strings */; };
+		84CBBB9818DF190000992502 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBBB9718DF190000992502 /* main.m */; };
+		84CBBB9C18DF190000992502 /* EBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBBB9B18DF190000992502 /* EBAppDelegate.m */; };
+		84CBBB9E18DF190000992502 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CBBB9D18DF190000992502 /* Images.xcassets */; };
+		84CBBBA518DF190000992502 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBBA418DF190000992502 /* XCTest.framework */; };
+		84CBBBA618DF190000992502 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBB8B18DF190000992502 /* Foundation.framework */; };
+		84CBBBA718DF190000992502 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBB8F18DF190000992502 /* UIKit.framework */; };
+		84CBBBAF18DF190000992502 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84CBBBAD18DF190000992502 /* InfoPlist.strings */; };
+		84CBBBB118DF190000992502 /* EBStepCounterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBBBB018DF190000992502 /* EBStepCounterTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84CBBBA818DF190000992502 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84CBBB8018DF190000992502 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84CBBB8718DF190000992502;
+			remoteInfo = EBStepCounter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8443D66C18DF267F000575E3 /* EBAccelerometerFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBAccelerometerFilter.h; sourceTree = "<group>"; };
+		8443D66D18DF267F000575E3 /* EBAccelerometerFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBAccelerometerFilter.m; sourceTree = "<group>"; };
+		8443D67018DF2738000575E3 /* EBStepManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBStepManager.h; sourceTree = "<group>"; };
+		8443D67118DF2738000575E3 /* EBStepManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBStepManager.m; sourceTree = "<group>"; };
+		8443D67718DF2C61000575E3 /* EBMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBMotionManager.h; sourceTree = "<group>"; };
+		8443D67818DF2C61000575E3 /* EBMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBMotionManager.m; sourceTree = "<group>"; };
+		8443D67A18DF2C6E000575E3 /* EBM7Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBM7Manager.h; sourceTree = "<group>"; };
+		8443D67B18DF2C6E000575E3 /* EBM7Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBM7Manager.m; sourceTree = "<group>"; };
+		8443D67D18DF2E55000575E3 /* ManagerCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerCommon.h; sourceTree = "<group>"; };
+		8443D67E18DF2F47000575E3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		84CBBB8818DF190000992502 /* EBStepCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBStepCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84CBBB8B18DF190000992502 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		84CBBB8D18DF190000992502 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		84CBBB8F18DF190000992502 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		84CBBB9318DF190000992502 /* EBStepCounter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EBStepCounter-Info.plist"; sourceTree = "<group>"; };
+		84CBBB9518DF190000992502 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84CBBB9718DF190000992502 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84CBBB9918DF190000992502 /* EBStepCounter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EBStepCounter-Prefix.pch"; sourceTree = "<group>"; };
+		84CBBB9A18DF190000992502 /* EBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EBAppDelegate.h; sourceTree = "<group>"; };
+		84CBBB9B18DF190000992502 /* EBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EBAppDelegate.m; sourceTree = "<group>"; };
+		84CBBB9D18DF190000992502 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		84CBBBA318DF190000992502 /* EBStepCounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EBStepCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84CBBBA418DF190000992502 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		84CBBBAC18DF190000992502 /* EBStepCounterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EBStepCounterTests-Info.plist"; sourceTree = "<group>"; };
+		84CBBBAE18DF190000992502 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84CBBBB018DF190000992502 /* EBStepCounterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EBStepCounterTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84CBBB8518DF190000992502 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8443D67F18DF2F47000575E3 /* CoreMotion.framework in Frameworks */,
+				84CBBB8E18DF190000992502 /* CoreGraphics.framework in Frameworks */,
+				84CBBB9018DF190000992502 /* UIKit.framework in Frameworks */,
+				84CBBB8C18DF190000992502 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84CBBBA018DF190000992502 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84CBBBA518DF190000992502 /* XCTest.framework in Frameworks */,
+				84CBBBA718DF190000992502 /* UIKit.framework in Frameworks */,
+				84CBBBA618DF190000992502 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8443D66B18DF267F000575E3 /* Filert */ = {
+			isa = PBXGroup;
+			children = (
+				8443D66C18DF267F000575E3 /* EBAccelerometerFilter.h */,
+				8443D66D18DF267F000575E3 /* EBAccelerometerFilter.m */,
+			);
+			path = Filert;
+			sourceTree = "<group>";
+		};
+		8443D66E18DF267F000575E3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8443D67018DF2738000575E3 /* EBStepManager.h */,
+				8443D67118DF2738000575E3 /* EBStepManager.m */,
+				8443D67D18DF2E55000575E3 /* ManagerCommon.h */,
+				8443D67318DF27A3000575E3 /* SubManager */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8443D67318DF27A3000575E3 /* SubManager */ = {
+			isa = PBXGroup;
+			children = (
+				8443D67718DF2C61000575E3 /* EBMotionManager.h */,
+				8443D67818DF2C61000575E3 /* EBMotionManager.m */,
+				8443D67A18DF2C6E000575E3 /* EBM7Manager.h */,
+				8443D67B18DF2C6E000575E3 /* EBM7Manager.m */,
+			);
+			name = SubManager;
+			sourceTree = "<group>";
+		};
+		84CBBB7F18DF190000992502 = {
+			isa = PBXGroup;
+			children = (
+				84CBBB9118DF190000992502 /* EBStepCounter */,
+				84CBBBAA18DF190000992502 /* EBStepCounterTests */,
+				84CBBB8A18DF190000992502 /* Frameworks */,
+				84CBBB8918DF190000992502 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84CBBB8918DF190000992502 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84CBBB8818DF190000992502 /* EBStepCounter.app */,
+				84CBBBA318DF190000992502 /* EBStepCounterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84CBBB8A18DF190000992502 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8443D67E18DF2F47000575E3 /* CoreMotion.framework */,
+				84CBBB8B18DF190000992502 /* Foundation.framework */,
+				84CBBB8D18DF190000992502 /* CoreGraphics.framework */,
+				84CBBB8F18DF190000992502 /* UIKit.framework */,
+				84CBBBA418DF190000992502 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84CBBB9118DF190000992502 /* EBStepCounter */ = {
+			isa = PBXGroup;
+			children = (
+				8443D66B18DF267F000575E3 /* Filert */,
+				8443D66E18DF267F000575E3 /* Manager */,
+				84CBBB9A18DF190000992502 /* EBAppDelegate.h */,
+				84CBBB9B18DF190000992502 /* EBAppDelegate.m */,
+				84CBBB9D18DF190000992502 /* Images.xcassets */,
+				84CBBB9218DF190000992502 /* Supporting Files */,
+			);
+			path = EBStepCounter;
+			sourceTree = "<group>";
+		};
+		84CBBB9218DF190000992502 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84CBBB9318DF190000992502 /* EBStepCounter-Info.plist */,
+				84CBBB9418DF190000992502 /* InfoPlist.strings */,
+				84CBBB9718DF190000992502 /* main.m */,
+				84CBBB9918DF190000992502 /* EBStepCounter-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84CBBBAA18DF190000992502 /* EBStepCounterTests */ = {
+			isa = PBXGroup;
+			children = (
+				84CBBBB018DF190000992502 /* EBStepCounterTests.m */,
+				84CBBBAB18DF190000992502 /* Supporting Files */,
+			);
+			path = EBStepCounterTests;
+			sourceTree = "<group>";
+		};
+		84CBBBAB18DF190000992502 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84CBBBAC18DF190000992502 /* EBStepCounterTests-Info.plist */,
+				84CBBBAD18DF190000992502 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84CBBB8718DF190000992502 /* EBStepCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84CBBBB418DF190000992502 /* Build configuration list for PBXNativeTarget "EBStepCounter" */;
+			buildPhases = (
+				84CBBB8418DF190000992502 /* Sources */,
+				84CBBB8518DF190000992502 /* Frameworks */,
+				84CBBB8618DF190000992502 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EBStepCounter;
+			productName = EBStepCounter;
+			productReference = 84CBBB8818DF190000992502 /* EBStepCounter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84CBBBA218DF190000992502 /* EBStepCounterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84CBBBB718DF190000992502 /* Build configuration list for PBXNativeTarget "EBStepCounterTests" */;
+			buildPhases = (
+				84CBBB9F18DF190000992502 /* Sources */,
+				84CBBBA018DF190000992502 /* Frameworks */,
+				84CBBBA118DF190000992502 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84CBBBA918DF190000992502 /* PBXTargetDependency */,
+			);
+			name = EBStepCounterTests;
+			productName = EBStepCounterTests;
+			productReference = 84CBBBA318DF190000992502 /* EBStepCounterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84CBBB8018DF190000992502 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = EB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "EggBrain Studio";
+				TargetAttributes = {
+					84CBBBA218DF190000992502 = {
+						TestTargetID = 84CBBB8718DF190000992502;
+					};
+				};
+			};
+			buildConfigurationList = 84CBBB8318DF190000992502 /* Build configuration list for PBXProject "EBStepCounter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 84CBBB7F18DF190000992502;
+			productRefGroup = 84CBBB8918DF190000992502 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84CBBB8718DF190000992502 /* EBStepCounter */,
+				84CBBBA218DF190000992502 /* EBStepCounterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84CBBB8618DF190000992502 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84CBBB9618DF190000992502 /* InfoPlist.strings in Resources */,
+				84CBBB9E18DF190000992502 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84CBBBA118DF190000992502 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84CBBBAF18DF190000992502 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84CBBB8418DF190000992502 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8443D67218DF2738000575E3 /* EBStepManager.m in Sources */,
+				8443D67C18DF2C6E000575E3 /* EBM7Manager.m in Sources */,
+				8443D66F18DF267F000575E3 /* EBAccelerometerFilter.m in Sources */,
+				84CBBB9818DF190000992502 /* main.m in Sources */,
+				8443D67918DF2C61000575E3 /* EBMotionManager.m in Sources */,
+				84CBBB9C18DF190000992502 /* EBAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84CBBB9F18DF190000992502 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84CBBBB118DF190000992502 /* EBStepCounterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84CBBBA918DF190000992502 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84CBBB8718DF190000992502 /* EBStepCounter */;
+			targetProxy = 84CBBBA818DF190000992502 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84CBBB9418DF190000992502 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84CBBB9518DF190000992502 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		84CBBBAD18DF190000992502 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84CBBBAE18DF190000992502 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84CBBBB218DF190000992502 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		84CBBBB318DF190000992502 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84CBBBB518DF190000992502 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EBStepCounter/EBStepCounter-Prefix.pch";
+				INFOPLIST_FILE = "EBStepCounter/EBStepCounter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		84CBBBB618DF190000992502 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EBStepCounter/EBStepCounter-Prefix.pch";
+				INFOPLIST_FILE = "EBStepCounter/EBStepCounter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		84CBBBB818DF190000992502 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EBStepCounter.app/EBStepCounter";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EBStepCounter/EBStepCounter-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EBStepCounterTests/EBStepCounterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		84CBBBB918DF190000992502 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EBStepCounter.app/EBStepCounter";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EBStepCounter/EBStepCounter-Prefix.pch";
+				INFOPLIST_FILE = "EBStepCounterTests/EBStepCounterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84CBBB8318DF190000992502 /* Build configuration list for PBXProject "EBStepCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84CBBBB218DF190000992502 /* Debug */,
+				84CBBBB318DF190000992502 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84CBBBB418DF190000992502 /* Build configuration list for PBXNativeTarget "EBStepCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84CBBBB518DF190000992502 /* Debug */,
+				84CBBBB618DF190000992502 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84CBBBB718DF190000992502 /* Build configuration list for PBXNativeTarget "EBStepCounterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84CBBBB818DF190000992502 /* Debug */,
+				84CBBBB918DF190000992502 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84CBBB8018DF190000992502 /* Project object */;
+}
