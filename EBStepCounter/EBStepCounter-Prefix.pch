@@ -15,4 +15,6 @@
     #import <Foundation/Foundation.h>
     #import <CoreMotion/CoreMotion.h>
 
+    #import "ManagerCommon.h"
+
 #endif

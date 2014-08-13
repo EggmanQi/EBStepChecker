@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ManagerCommon.h"
 
 @interface EBMotionManager : NSObject
 
@@ -16,11 +15,11 @@
 - (BOOL)isAvailable;
 - (BOOL)isActive;
 
-- (void)start;
+- (void)startWithHandler:(EBStepUpdateHandler)handler;
 - (void)pause;
 - (void)stop;
 - (void)restart;
 
-- (void)startWithHandler:(EBStepUpdateHandler)handler;
+//- (void)startWithHandler:(EBStepUpdateHandler)handler;
 
 @end

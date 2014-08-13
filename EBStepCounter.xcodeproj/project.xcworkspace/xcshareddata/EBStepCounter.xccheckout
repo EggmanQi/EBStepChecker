@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A02F388F-7373-4D8D-B7CE-D613410F20A7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EBStepCounter</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F441C6EF-C1D8-48BE-85B5-3DAEFB9C447C</key>
+		<string>https://github.com/EggmanQi/EBStepChecker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>EBStepCounter.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F441C6EF-C1D8-48BE-85B5-3DAEFB9C447C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/EggmanQi/EBStepChecker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F441C6EF-C1D8-48BE-85B5-3DAEFB9C447C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F441C6EF-C1D8-48BE-85B5-3DAEFB9C447C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EBStepChecker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

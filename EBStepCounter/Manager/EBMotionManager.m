@@ -9,6 +9,13 @@
 #import "EBMotionManager.h"
 #import "EBAccelerometerFilter.h"
 
+#define NORMAL_FREQUENCY    1/60.0f
+#define NORMAL_RATE         60.0f
+#define LOW_FREQUENCY       1/10.0f
+#define LOW_RATE            10.0f
+#define NORMAL_SAMPLE_NUM   100
+#define LOW_SAMPLE_NUM      16
+
 @interface EBMotionManager ()
 {
     NSInteger pDL; // 左边最低点
@@ -20,19 +27,31 @@
     CGFloat   threshold_height;
     CGFloat   threshold_low;
     
+    NSInteger tempSteps;
     NSInteger steps;
+    
+    CGFloat                 wav[100];
+    NSInteger                 wavTag;
 }
 
 @property(nonatomic, strong)CMMotionManager *motionManager;
 @property(nonatomic, strong)LowpassFilter   *lowFilter;
 
-@property(nonatomic, strong)NSMutableArray  *wavArray;
-@property(nonatomic, strong)NSArray         *deepCopyAvgArray;
-@property(nonatomic, strong)NSArray         *deepCopyWavArray;
+@property(nonatomic, strong)EBStepUpdateHandler internalHandler;
 
 @end
 
 @implementation EBMotionManager
+
+#pragma mark -
+float ave(float arr[], int n)
+{
+    double avg=0;
+    int i=0;
+    for(;i<n;i++)
+        avg+=(double)arr[i]/(double)(n);
+    return avg;
+}
 
 #pragma mark - Status
 - (BOOL)isAvailable
@@ -46,19 +65,23 @@
 }
 
 #pragma mark - Control
+- (void)startWithHandler:(EBStepUpdateHandler)handler
+{
+    self.internalHandler = handler;
+    
+    [self start];
+}
+
 - (void)start
 {
     __weak EBMotionManager *weakSelf = self;
     [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue]
                                              withHandler:^(CMAccelerometerData *accData, NSError *error) {
-                                                 accPos accPos;
-                                                 accPos.x = accData.acceleration.x;
-                                                 accPos.y = accData.acceleration.y;
-                                                 accPos.z = accData.acceleration.z;
-                                                 
-                                                 [weakSelf.lowFilter addAcceleration:accPos];
-                                                 
-                                                 [weakSelf cal:weakSelf.lowFilter.pos];
+                                                 if (!error) {
+                                                     [weakSelf prepareCal:accData];
+                                                 }else {
+                                                     printf("CMMotionManager got error!!!");
+                                                 }
                                              }];
 }
 
@@ -74,58 +97,77 @@
 
 - (void)restart
 {
-    
+    [self stop];
+    [self start];
 }
 
-- (void)startWithHandler:(EBStepUpdateHandler)handler
+#pragma mark -
+- (void)filtrationSteps
 {
-    [self start];
-    
-    if (handler) {
-        
+    if (tempSteps > 0 && tempSteps < 6) {
+        steps = steps + tempSteps;
+        if (self.internalHandler) {
+            self.internalHandler(steps, nil, nil);
+        }
     }
+    tempSteps = 0;
 }
 
 #pragma mark - Cal steps
+- (void)prepareCal:(CMAccelerometerData *)accData
+{
+    accPos accPos;
+    accPos.x = accData.acceleration.x;
+    accPos.y = accData.acceleration.y;
+    accPos.z = accData.acceleration.z;
+    
+    [self.lowFilter addAcceleration:accPos];
+    
+    [self cal:self.lowFilter.pos];
+}
+
 - (void)cal:(accPos)pos
 {
     CGFloat g = sqrtf(pos.x*pos.x + pos.y*pos.y + pos.z*pos.z);
     
-    [self.wavArray addObject:@(g)];
-    
-    if (self.wavArray.count>100) {
-        self.deepCopyAvgArray = [[NSArray alloc] initWithArray:self.wavArray copyItems:YES];
-        self.deepCopyWavArray = [[NSArray alloc] initWithArray:self.wavArray copyItems:YES];
-        
+    wav[wavTag] = g;
+    wavTag ++;
+    if (wavTag == 100) {
+        [self stop];
         [self calAvg];
         [self calWav];
         
-        [self.wavArray removeAllObjects];
+        wavTag = 0;
+        memset(wav, 0x0, 4*100);
+
+        [self filtrationSteps];
+        
+        [NSThread sleepForTimeInterval:.1f];
+        
+        [self start];
     }
 }
 
 - (void)calAvg
 {
-    //    CGFloat max = [[arvArray valueForKeyPath:@"@max.floatValue"] floatValue];
-    //    CGFloat min = [[arvArray valueForKeyPath:@"@min.floatValue"] floatValue];
-    avg = [[self.deepCopyAvgArray valueForKeyPath:@"@avg.floatValue"] floatValue];
+    NSInteger length = sizeof(wav)/sizeof(wav[0]);
+    avg = ave(wav, length);
     threshold_height = avg * 1.04;
     threshold_low = avg * 0.985;
 }
 
 - (void)calWav
-{
-    [self step1_findFirstDownP:0];
-    
+{    
     NSInteger iH = 999;
     NSInteger iDL = 999;
     NSInteger iDR = 999;
+    NSInteger length = sizeof(wav)/sizeof(wav[0]);
     
-    for (NSInteger i=0; i<self.deepCopyWavArray.count; i++) {
-        CGFloat p1 = [self.deepCopyWavArray[i] floatValue];
-        CGFloat p2 = [self.deepCopyWavArray[i+1] floatValue];
-        CGFloat p3 = [self.deepCopyWavArray[i+2] floatValue];
-        CGFloat p4 = [self.deepCopyWavArray[i+3] floatValue];
+    for (NSInteger i=0; i<length; i++) {
+        CGFloat p1 = wav[i];
+        CGFloat p2 = wav[i+1];
+        CGFloat p3 = wav[i+2];
+        CGFloat p4 = wav[i+3];
         
         if (p1<p2 && p3<p2 && p4<p3) {  // 最高点
             if (p2>threshold_height) {
@@ -153,176 +195,35 @@
         }
         
         if (iDL<iH && iH<iDR) {
-            steps++;
+            tempSteps++;
             
             iH = 999;
             iDL = 999;
             iDR = 999;
+            
+            NSLog(@"步数增加！ %d", tempSteps);
         }
         
-        if (i+3==self.deepCopyWavArray.count) {
+        if (i+3 == length) {
             break;
         }
     }
-}
-
-- (void)step1_findFirstDownP:(NSInteger)beginP
-{
-    pDL = beginP;
-    pDR = -1;
-    pH  = -1;
-    BOOL isEnd = NO;
-    
-    if (beginP>=self.deepCopyWavArray.count-4) {
-        return;
-    }
-    
-    CGFloat pPre = [self.deepCopyWavArray[pDL] floatValue];
-    for (NSInteger i=pDL; i<self.deepCopyWavArray.count-2; i++) {
-        CGFloat pCurrent = [self.deepCopyWavArray[i] floatValue];
-        CGFloat pNext = [self.deepCopyWavArray[i+1] floatValue];
-        CGFloat pNext2 = [self.deepCopyWavArray[i+2] floatValue];
-        
-        // . 波形图为上升趋势
-        if (pPre<pCurrent && pCurrent<pNext && pNext<pNext2) {
-            if (pPre<threshold_low) {
-                pDL = (i-1)<=0 ? 0 : (i-1);
-                break;
-            }
-        }
-        
-        // . 波形图为 v 型
-        if (pPre>pCurrent && pNext>pCurrent && pNext2>pNext) {
-            if (pCurrent<threshold_low) {
-                pDL = i;
-                break;
-            }
-        }
-        
-        pPre = pCurrent;
-        
-        if (i+2 == self.deepCopyWavArray.count-2) {
-            isEnd = YES;
-            break;
-        }
-    }
-    
-    if (!isEnd) {
-        [self step2_findHightP];
-    }else {
-        //        NSLog(@"step 1 结束");
-        return;
-    }
-}
-
-- (void)step2_findHightP
-{
-    //    NSLog(@"执行 step 2");
-    
-    BOOL isEnd = NO;
-    
-    CGFloat pPre = [self.deepCopyWavArray[pDL] floatValue];
-    for (NSInteger i=pDL+1; i<self.deepCopyWavArray.count-2; i++) {
-        CGFloat pCurrent = [self.deepCopyWavArray[i] floatValue];
-        CGFloat pNext = [self.deepCopyWavArray[i+1] floatValue];
-        CGFloat pNext2 = [self.deepCopyWavArray[i+2] floatValue];
-        
-        // . 波形图为 A 形
-        if (pPre<pCurrent && pNext<pCurrent && pNext2<pNext) {
-            if (pCurrent>threshold_height) {
-                pH = i;
-                break;
-            }
-        }
-        
-        pPre = pCurrent;
-        
-        if (i+2 == self.deepCopyWavArray.count-2) {
-            isEnd = YES;
-            break;
-        }
-    }
-    
-    if (isEnd) {
-        //        NSLog(@"step 2 结束");
-        return;
-    }
-    
-    if (pH>0) {
-        // 判断时间间隔，不符合则返回到step1
-        if (pH-pDL>1 && pH-pDL<=60) {
-            [self step3_findSecondDownP];
-        }else {
-            [self step1_findFirstDownP:pH];
-        }
-    }else {
-        //        NSLog(@"step 2 结束");
-        return;
-    }
-}
-
-- (void)step3_findSecondDownP
-{
-    //    NSLog(@"执行 step 3");
-    
-    BOOL isEnd = NO;
-    
-    CGFloat pPre = [self.deepCopyWavArray[pH] floatValue];
-    for (NSInteger i=pH+1; i<self.deepCopyWavArray.count-2; i++) {
-        CGFloat pCurrent = [self.deepCopyWavArray[i] floatValue];
-        CGFloat pNext = [self.deepCopyWavArray[i+1] floatValue];
-        CGFloat pNext2 = [self.deepCopyWavArray[i+2] floatValue];
-        
-        // . 波形图为 v 型
-        if (pPre>pCurrent && pCurrent<pNext && pNext<pNext2) {
-            if (pCurrent<threshold_low) {
-                pDR = i;
-                break;
-            }
-        }
-        
-        pPre = pCurrent;
-        
-        if (i+2 == self.deepCopyWavArray.count-2) {
-            isEnd = YES;
-            break;
-        }
-    }
-    
-    if (isEnd) {
-        //        NSLog(@"step 3 结束");
-        return;
-    }
-    
-    if (pDR>0) {
-        if (pDR-pH>1 && pDR-pH<=60) {
-            //            self.steps ++;
-            steps ++;
-            NSLog(@"有效计步");
-        }
-    }else {
-        //        NSLog(@"step 3 结束");
-        return;
-    }
-    
-    [self step1_findFirstDownP:pDR];
 }
 
 #pragma mark - Initialization
 + (EBMotionManager*)sharedManager
 {
-    static EBMotionManager *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[EBMotionManager alloc] init];
+    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
+        return [[self alloc] init];
     });
-    return sharedInstance;
 }
 
 - (id)init
 {
     if (self=[super init]) {
-        
+        wavTag = 0;
+        tempSteps = 0;
+        steps = 0;
     }
     return self;
 }
@@ -331,7 +232,7 @@
 {
     if (!_motionManager) {
         _motionManager = [[CMMotionManager alloc] init];
-        _motionManager.accelerometerUpdateInterval = 1/60.0f;
+        _motionManager.accelerometerUpdateInterval = NORMAL_FREQUENCY;
     }
     return _motionManager;
 }
@@ -339,18 +240,13 @@
 - (LowpassFilter*)lowFilter
 {
     if (_lowFilter==nil) {
-        _lowFilter = [[LowpassFilter alloc] initWithSampleRate:60.0 cutoffFrequency:5.0];
+        _lowFilter = [[LowpassFilter alloc] initWithSampleRate:NORMAL_RATE
+                                               cutoffFrequency:LOW_RATE];
         _lowFilter.adaptive = YES;
     }
     return _lowFilter;
 }
 
-- (NSMutableArray*)wavArray
-{
-    if (!_wavArray) {
-        _wavArray = [NSMutableArray array];
-    }
-    return _wavArray;
-}
+
 
 @end

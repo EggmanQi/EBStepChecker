@@ -10,4 +10,8 @@
 
 @interface EBStepManager : NSObject
 
++ (EBStepManager *)sharedManager;
+
+- (void)startStepCounting:(EBStepUpdateHandler)handler;
+
 @end

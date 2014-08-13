@@ -74,12 +74,9 @@
 #pragma mark - Initialization
 + (EBM7Manager*)sharedManager
 {
-    static EBM7Manager *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[EBM7Manager alloc] init];
+    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
+        return [[self alloc] init];
     });
-    return sharedInstance;
 }
 
 - (id)init

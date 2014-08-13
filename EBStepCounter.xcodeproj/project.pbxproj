@@ -12,6 +12,8 @@
 		8443D67918DF2C61000575E3 /* EBMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8443D67818DF2C61000575E3 /* EBMotionManager.m */; };
 		8443D67C18DF2C6E000575E3 /* EBM7Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8443D67B18DF2C6E000575E3 /* EBM7Manager.m */; };
 		8443D67F18DF2F47000575E3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8443D67E18DF2F47000575E3 /* CoreMotion.framework */; };
+		848E4E9E199B409000934B3A /* EBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E4E9C199B409000934B3A /* EBViewController.m */; };
+		848E4E9F199B409000934B3A /* EBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848E4E9D199B409000934B3A /* EBViewController.xib */; };
 		84CBBB8C18DF190000992502 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBB8B18DF190000992502 /* Foundation.framework */; };
 		84CBBB8E18DF190000992502 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBB8D18DF190000992502 /* CoreGraphics.framework */; };
 		84CBBB9018DF190000992502 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBB8F18DF190000992502 /* UIKit.framework */; };
@@ -47,6 +49,9 @@
 		8443D67B18DF2C6E000575E3 /* EBM7Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBM7Manager.m; sourceTree = "<group>"; };
 		8443D67D18DF2E55000575E3 /* ManagerCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerCommon.h; sourceTree = "<group>"; };
 		8443D67E18DF2F47000575E3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		848E4E9B199B409000934B3A /* EBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBViewController.h; sourceTree = "<group>"; };
+		848E4E9C199B409000934B3A /* EBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBViewController.m; sourceTree = "<group>"; };
+		848E4E9D199B409000934B3A /* EBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBViewController.xib; sourceTree = "<group>"; };
 		84CBBB8818DF190000992502 /* EBStepCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBStepCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CBBB8B18DF190000992502 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		84CBBB8D18DF190000992502 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -102,9 +107,9 @@
 		8443D66E18DF267F000575E3 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				8443D67D18DF2E55000575E3 /* ManagerCommon.h */,
 				8443D67018DF2738000575E3 /* EBStepManager.h */,
 				8443D67118DF2738000575E3 /* EBStepManager.m */,
-				8443D67D18DF2E55000575E3 /* ManagerCommon.h */,
 				8443D67318DF27A3000575E3 /* SubManager */,
 			);
 			path = Manager;
@@ -159,6 +164,9 @@
 				8443D66E18DF267F000575E3 /* Manager */,
 				84CBBB9A18DF190000992502 /* EBAppDelegate.h */,
 				84CBBB9B18DF190000992502 /* EBAppDelegate.m */,
+				848E4E9B199B409000934B3A /* EBViewController.h */,
+				848E4E9C199B409000934B3A /* EBViewController.m */,
+				848E4E9D199B409000934B3A /* EBViewController.xib */,
 				84CBBB9D18DF190000992502 /* Images.xcassets */,
 				84CBBB9218DF190000992502 /* Supporting Files */,
 			);
@@ -270,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848E4E9F199B409000934B3A /* EBViewController.xib in Resources */,
 				84CBBB9618DF190000992502 /* InfoPlist.strings in Resources */,
 				84CBBB9E18DF190000992502 /* Images.xcassets in Resources */,
 			);
@@ -293,6 +302,7 @@
 				8443D67218DF2738000575E3 /* EBStepManager.m in Sources */,
 				8443D67C18DF2C6E000575E3 /* EBM7Manager.m in Sources */,
 				8443D66F18DF267F000575E3 /* EBAccelerometerFilter.m in Sources */,
+				848E4E9E199B409000934B3A /* EBViewController.m in Sources */,
 				84CBBB9818DF190000992502 /* main.m in Sources */,
 				8443D67918DF2C61000575E3 /* EBMotionManager.m in Sources */,
 				84CBBB9C18DF190000992502 /* EBAppDelegate.m in Sources */,
