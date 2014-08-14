@@ -14,16 +14,8 @@
 		8443D67F18DF2F47000575E3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8443D67E18DF2F47000575E3 /* CoreMotion.framework */; };
 		848E4E9E199B409000934B3A /* EBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E4E9C199B409000934B3A /* EBViewController.m */; };
 		848E4E9F199B409000934B3A /* EBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848E4E9D199B409000934B3A /* EBViewController.xib */; };
-		84A9AB5D199CA1B000D2F779 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A9AB5C199CA1B000D2F779 /* GameKit.framework */; };
-		84A9AB5F199CA1B200D2F779 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A9AB5E199CA1B200D2F779 /* PassKit.framework */; };
-		84A9AB61199CA1B400D2F779 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A9AB60199CA1B400D2F779 /* StoreKit.framework */; };
-		84A9AB63199CA1B500D2F779 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A9AB62199CA1B500D2F779 /* MapKit.framework */; };
-		84A9AB65199CA1B700D2F779 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A9AB64199CA1B700D2F779 /* NetworkExtension.framework */; };
 		84A9AB67199CA1BA00D2F779 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A9AB66199CA1BA00D2F779 /* AudioToolbox.framework */; };
-		84A9AB69199CA1C900D2F779 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A9AB68199CA1C900D2F779 /* HomeKit.framework */; };
-		84A9AB6B199CA1CB00D2F779 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A9AB6A199CA1CB00D2F779 /* HealthKit.framework */; };
-		84A9AB6D199CA1CC00D2F779 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A9AB6C199CA1CC00D2F779 /* ExternalAccessory.framework */; };
-		84A9AB6F199CB2A700D2F779 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A9AB6E199CB2A700D2F779 /* CloudKit.framework */; };
+		84A9AB74199CC55A00D2F779 /* MFYueHei_Noncommercial-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84A9AB73199CC55A00D2F779 /* MFYueHei_Noncommercial-Regular.otf */; };
 		84CBBB8C18DF190000992502 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBB8B18DF190000992502 /* Foundation.framework */; };
 		84CBBB8E18DF190000992502 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBB8D18DF190000992502 /* CoreGraphics.framework */; };
 		84CBBB9018DF190000992502 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBBB8F18DF190000992502 /* UIKit.framework */; };
@@ -63,16 +55,8 @@
 		848E4E9C199B409000934B3A /* EBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBViewController.m; sourceTree = "<group>"; };
 		848E4E9D199B409000934B3A /* EBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBViewController.xib; sourceTree = "<group>"; };
 		84A9AB5B199CA1AA00D2F779 /* EBStepCounter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = EBStepCounter.entitlements; sourceTree = "<group>"; };
-		84A9AB5C199CA1B000D2F779 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		84A9AB5E199CA1B200D2F779 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
-		84A9AB60199CA1B400D2F779 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		84A9AB62199CA1B500D2F779 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		84A9AB64199CA1B700D2F779 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		84A9AB66199CA1BA00D2F779 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		84A9AB68199CA1C900D2F779 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
-		84A9AB6A199CA1CB00D2F779 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		84A9AB6C199CA1CC00D2F779 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
-		84A9AB6E199CB2A700D2F779 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		84A9AB73199CC55A00D2F779 /* MFYueHei_Noncommercial-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFYueHei_Noncommercial-Regular.otf"; sourceTree = "<group>"; };
 		84CBBB8818DF190000992502 /* EBStepCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBStepCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CBBB8B18DF190000992502 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		84CBBB8D18DF190000992502 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,20 +80,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A9AB5F199CA1B200D2F779 /* PassKit.framework in Frameworks */,
-				84A9AB61199CA1B400D2F779 /* StoreKit.framework in Frameworks */,
-				84A9AB63199CA1B500D2F779 /* MapKit.framework in Frameworks */,
 				8443D67F18DF2F47000575E3 /* CoreMotion.framework in Frameworks */,
-				84A9AB65199CA1B700D2F779 /* NetworkExtension.framework in Frameworks */,
 				84CBBB8E18DF190000992502 /* CoreGraphics.framework in Frameworks */,
 				84CBBB9018DF190000992502 /* UIKit.framework in Frameworks */,
-				84A9AB6F199CB2A700D2F779 /* CloudKit.framework in Frameworks */,
 				84A9AB67199CA1BA00D2F779 /* AudioToolbox.framework in Frameworks */,
-				84A9AB69199CA1C900D2F779 /* HomeKit.framework in Frameworks */,
-				84A9AB6B199CA1CB00D2F779 /* HealthKit.framework in Frameworks */,
 				84CBBB8C18DF190000992502 /* Foundation.framework in Frameworks */,
-				84A9AB5D199CA1B000D2F779 /* GameKit.framework in Frameworks */,
-				84A9AB6D199CA1CC00D2F779 /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +142,14 @@
 			name = VC;
 			sourceTree = "<group>";
 		};
+		84A9AB72199CC55A00D2F779 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				84A9AB73199CC55A00D2F779 /* MFYueHei_Noncommercial-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		84CBBB7F18DF190000992502 = {
 			isa = PBXGroup;
 			children = (
@@ -189,16 +172,7 @@
 		84CBBB8A18DF190000992502 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				84A9AB6E199CB2A700D2F779 /* CloudKit.framework */,
-				84A9AB6C199CA1CC00D2F779 /* ExternalAccessory.framework */,
-				84A9AB6A199CA1CB00D2F779 /* HealthKit.framework */,
-				84A9AB68199CA1C900D2F779 /* HomeKit.framework */,
 				84A9AB66199CA1BA00D2F779 /* AudioToolbox.framework */,
-				84A9AB64199CA1B700D2F779 /* NetworkExtension.framework */,
-				84A9AB62199CA1B500D2F779 /* MapKit.framework */,
-				84A9AB60199CA1B400D2F779 /* StoreKit.framework */,
-				84A9AB5E199CA1B200D2F779 /* PassKit.framework */,
-				84A9AB5C199CA1B000D2F779 /* GameKit.framework */,
 				8443D67E18DF2F47000575E3 /* CoreMotion.framework */,
 				84CBBB8B18DF190000992502 /* Foundation.framework */,
 				84CBBB8D18DF190000992502 /* CoreGraphics.framework */,
@@ -212,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				84A9AB5B199CA1AA00D2F779 /* EBStepCounter.entitlements */,
+				84A9AB72199CC55A00D2F779 /* Fonts */,
 				8443D66B18DF267F000575E3 /* Filert */,
 				8443D66E18DF267F000575E3 /* Manager */,
 				84A9AB70199CB9F700D2F779 /* VC */,
@@ -304,7 +279,7 @@
 						DevelopmentTeam = 9M8Y2N3NUT;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -313,40 +288,40 @@
 								enabled = 1;
 							};
 							com.apple.GameCenter = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.HealthKit = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.HomeKit = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.InterAppAudio = {
 								enabled = 1;
 							};
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Maps.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Passbook = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.SafariKeychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.VPNLite = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.WAC = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -380,6 +355,7 @@
 			files = (
 				848E4E9F199B409000934B3A /* EBViewController.xib in Resources */,
 				84CBBB9618DF190000992502 /* InfoPlist.strings in Resources */,
+				84A9AB74199CC55A00D2F779 /* MFYueHei_Noncommercial-Regular.otf in Resources */,
 				84CBBB9E18DF190000992502 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
