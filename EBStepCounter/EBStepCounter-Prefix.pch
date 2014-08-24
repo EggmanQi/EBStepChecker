@@ -14,7 +14,10 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreMotion/CoreMotion.h>
+    #import <CoreData/CoreData.h>
+    #import <CoreLocation/CoreLocation.h>
 
     #import "ManagerCommon.h"
+    #import "EBDBManager.h"
 
 #endif

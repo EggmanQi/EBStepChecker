@@ -13,5 +13,6 @@
 + (EBStepManager *)sharedManager;
 
 - (void)startStepCounting:(EBStepUpdateHandler)handler;
+- (void)saveSteps;
 
 @end

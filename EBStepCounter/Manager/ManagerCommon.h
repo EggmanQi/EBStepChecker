@@ -9,6 +9,8 @@
 #ifndef EBStepCounter_ManagerCommon_h
 #define EBStepCounter_ManagerCommon_h
 
+#define TEST_MODE       1
+
 typedef void (^EBStepUpdateHandler)(NSInteger numberOfSteps, NSDate *timestamp, NSError *error);
 
 typedef struct{
