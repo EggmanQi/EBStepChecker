@@ -11,6 +11,7 @@
 #import "EBViewController.h"
 #import "EBStepManager.h"
 #import "NSString+dateTranser.h"
+#import "EBWeatherViewController.h"
 
 @interface EBViewController () <POPAnimationDelegate>
 
@@ -25,6 +26,14 @@
 - (IBAction)onSaveAction:(id)sender
 {
     [[EBStepManager sharedManager] saveSteps];
+}
+
+- (IBAction)onPMAction:(id)sender
+{
+    EBWeatherViewController *wvc = [[EBWeatherViewController alloc] init];
+    [self presentViewController:wvc
+                       animated:YES
+                     completion:nil];
 }
 
 #pragma mark -

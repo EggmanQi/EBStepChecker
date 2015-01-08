@@ -135,15 +135,14 @@ CGFloat ave(CGFloat arr[], int n)
     if (wavTag == 100) {
         [self stop];
         [self calAvg];
-//        [self calWav];
-        [self calWav_New];
+        [self calWav];
         
         wavTag = 0;
         memset(wav, 0x0, 4*100);
 
         [self filtrationSteps];
         
-        [NSThread sleepForTimeInterval:.1f];
+        [NSThread sleepForTimeInterval:.05f];
         
         [self start];
     }
@@ -153,13 +152,13 @@ CGFloat ave(CGFloat arr[], int n)
 {
     int length = sizeof(wav)/sizeof(wav[0]);
     avg = ave(wav, length);
-    threshold_height = avg * 1.03;
-    threshold_low = avg * 0.99;
+    threshold_height = avg * 1.04;
+    threshold_low = avg * 0.985;
     
 //    NSLog(@"计算：：： %f, %f, %f", avg, threshold_height, threshold_low);
 }
 
-- (void)calWav_New
+- (void)calWav
 {
     NSInteger length = sizeof(wav)/sizeof(wav[0]);
     CGFloat wav_new[100];
@@ -237,94 +236,7 @@ CGFloat ave(CGFloat arr[], int n)
     tempSteps = (arr_new.count/3)>6 ? 0 : arr_new.count/3;
     
     [arr_new removeAllObjects];
-    arr_new = nil;
-    
-    return;
-    
-    // . 判断极值是否符合正弦函数
-    for (NSInteger i=0; i<length; i++) {
-        
-    }
-    
-}
-
-- (void)calWav
-{
-    tempSteps = 0;
-    
-    NSInteger iHL = 999;
-    NSInteger iD  = 999;
-    NSInteger iHR = 999;
-    
-    NSInteger iDL = 999;
-    NSInteger iH  = 999;
-    NSInteger iDR = 999;
-    
-    NSInteger length = sizeof(wav)/sizeof(wav[0]);
-    
-    BOOL      isHeightFirst = NO;
-    
-    for (NSInteger i=0; i<length; i++) {
-        CGFloat p1 = wav[i];
-        CGFloat p2 = wav[i+1];
-        CGFloat p3 = wav[i+2];
-        CGFloat p4 = wav[i+3];
-        
-        if (p1<p2 && p3<p2 && p4<p3) {  // 最高点
-            if (p2>threshold_height) {
-//                NSLog(@"get 最高");
-                iH = i+1;
-            }
-        }
-        
-        if (p1>p2 && p3>p2 && p4>p3) {  // 最低点
-            if (p2<threshold_low) {
-                if (iH == 999) {
-                    iDL = p2;
-                }else {
-                    if (iDL-iH<60 && iDL-iH>10) {
-                        iDL = p2;
-                    }else {
-                        iDR = p2;
-                        if (iDR-iH>60) {
-                            iH = 999;
-                            iDL = 999;
-                            iDR = 999;
-                        }
-                    }
-                }
-//                if (pDL==0) {
-//                    pDL = p2;
-//                    iDL = i+1;
-//                    if (iDL-iH>60 && iDL-iH<5) { // 判断是否在合理区间
-//                        NSLog(@"get 最低-左");
-//                        iDL = 999;
-//                    }
-//                }else {
-//                    pDR = p2;
-//                    iDR = i+1;
-//                    if (iDR-iH>60 && iDR-iH<5) {
-//                        NSLog(@"get 最低-右");
-//                        iDR = 999;
-//                    }
-//                }
-            }
-        }
-        
-        if (iDL<iH && iH<iDR) {
-            tempSteps = tempSteps + 1;
-            
-            iH = 999;
-            iDL = 999;
-            iDR = 999;
-            
-//            NSLog(@"步数增加！ %d", tempSteps);
-        }
-        
-        if (i+3 == length) {
-            break;
-        }
-    }
+    arr_new = nil;    
 }
 
 #pragma mark - Initialization
