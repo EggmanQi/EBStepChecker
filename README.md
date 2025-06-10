@@ -6,14 +6,13 @@ iOS steps checker
 * 内置了转换为使用芯片计步的功能
 * 最新的代码在“数据持久化分支”
 
-### iPhone甚至之后大部分只能设备大概都会用芯片统计，人手写算法的大概会成功历史，不更新了 
-#### 其实是OT太多没时间弄了，就丢这里吧
+### iPhone甚至之后大部分智能设备大概都会用芯片统计，手写算法的大概会成功历史，不更新了 
 
 ---
 
-* All data comes from device's Accelerometer
+* All data comes from the device's Accelerometer
 * Can count steps without use M7(iOS7, iPhone5S)
-* The newest code is on branch “数据持久化分支”
+* The newest code is on the branch “数据持久化分支”
 
 ### Won't update anymore 
 #### Just lazy
